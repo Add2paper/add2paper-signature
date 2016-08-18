@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+
+<button id="copyBtn">서명 복사하기</button><br/>
+
+<div id="template" style="margin-top: 20px;">
+  <hr style="border: 1px solid rgb(216,216,216);">
+  <div style="padding: 20px 0;">
+    <img style="width: 160px;" src="add2paper-logo.png" alt="애드투페이퍼" />
+    <div style="color: rgb(68, 68, 68); font-size: 16px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin-top: 16px;">
+      윤보람 책임
+    </div>
+    <div style="color: rgb(68, 68, 68); font-size: 12px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+      (주)애드투페이퍼 디자인팀 UX/UI Designer
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+        <b>E-mail</b> : boram@add2paper.com
+      </div>
+      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+        <b>Mobile</b> : 010-5170-7571
+      </div>
+      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+        <b>Phone</b> : 070-8666-1101
+      </div>
+      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+        <b>Address</b> : 서울특별시 강남구 논현동 176-23번지 유퍼스트 빌딩 3층
+      </div>
+      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+        <b>Home Page</b> : www.add2paper.com
+      </div>
+    </div>
+  </div>
+  <hr style="border: 1px solid rgb(216,216,216)">
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    $('#copyBtn').on('click', function() {
+      selectText('template');
+      try {
+        document.execCommand('copy');
+        alert('복사 성공');
+      } catch (err) {
+        alert('복사 실패');
+      }
+    });
+    function selectText(element) {
+      var doc = document;
+      var text = doc.getElementById(element);
+      var range;
+      var selection;
+      if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+      } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    }
+  });
+</script>
+</body>
+</html>
