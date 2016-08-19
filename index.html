@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <title>애드투페이퍼 서명 생성기</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    label {
+      width: 100px;
+      display: inline-block;
+    }
+    input {
+      width: 200px;
+    }
+  </style>
 </head>
 <body>
+<div>
+  <div style="margin-top: 30px; width: 300px; float: left;">
+    <label>이름 + 직책</label> <input type="text" id="name" placeholder="윤보람 책임"><br>
+    <label>포지션</label> <input type="text" id="position" placeholder="디자인팀 UI/UX Designer"><br>
+    <label>이메일</label> <input type="text" id="email" placeholder="boram@add2paper.com"><br>
+    <label>핸드폰 번호</label> <input type="text" id="mobile" placeholder="010-5170-7571"><br>
+    <label>내선 번호</label> <input type="text" id="phone" placeholder="070-8666-1101"><br>
+  </div>
 
-<button id="copyBtn">서명 복사하기</button><br/>
-
-<div id="template" style="margin-top: 20px;">
-  <hr style="border: 1px solid rgb(216,216,216);">
-  <div style="padding: 20px 0;">
-    <img style="width: 160px;" src="add2paper-logo.png" alt="애드투페이퍼" />
-    <div style="color: rgb(68, 68, 68); font-size: 16px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin-top: 16px;">
-      윤보람 책임
-    </div>
-    <div style="color: rgb(68, 68, 68); font-size: 12px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-      (주)애드투페이퍼 디자인팀 UX/UI Designer
-    </div>
-    <div style="margin-top: 16px;">
-      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-        <b>E-mail</b> : boram@add2paper.com
+  <div style="float: left; width: 600px;">
+    <div id="template" style="margin-top: 20px;">
+      <hr style="border: 1px solid rgb(216,216,216);">
+      <div style="padding: 20px 0;">
+        <img style="width: 160px;" src="add2paper-logo.png" alt="애드투페이퍼" />
+        <div style="color: rgb(68, 68, 68); font-size: 16px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin-top: 16px;">
+          <span id="nameVal"></span>
+        </div>
+        <div style="color: rgb(68, 68, 68); font-size: 12px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+          (주)애드투페이퍼 <span id="positionVal"></span>
+        </div>
+        <div style="margin-top: 16px;">
+          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+            <b>E-mail</b> : <span id="emailVal"></span>
+          </div>
+          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+            <b>Mobile</b> : <span id="mobileVal"></span>
+          </div>
+          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+            <b>Phone</b> : <span id="phoneVal"></span>
+          </div>
+          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+            <b>Address</b> : 서울특별시 강남구 논현동 176-23번지 유퍼스트 빌딩 3층
+          </div>
+          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
+            <b>Home Page</b> : www.add2paper.com
+          </div>
+        </div>
       </div>
-      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-        <b>Mobile</b> : 010-5170-7571
-      </div>
-      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-        <b>Phone</b> : 070-8666-1101
-      </div>
-      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-        <b>Address</b> : 서울특별시 강남구 논현동 176-23번지 유퍼스트 빌딩 3층
-      </div>
-      <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-        <b>Home Page</b> : www.add2paper.com
-      </div>
+      <hr style="border: 1px solid rgb(216,216,216)">
     </div>
   </div>
-  <hr style="border: 1px solid rgb(216,216,216)">
+  <div style="clear: both;"></div>
 </div>
-
+<button id="copyBtn" style="width: 100px; height: 30px; margin-top: 10px;">서명 복사하기</button>
+<ol>
+  <li>본인 정보를 입력 후 '서명 복사하기' 버튼을 클릭해 서명을 복사</li>
+  <li><a href="https://mail.google.com">지메일</a> 접속 후 우측 상단의 톱니바퀴 -> 설정</li>
+  <li>서명란에 붙여넣기</li>
+</ol>
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 <script>
@@ -48,11 +72,38 @@
       selectText('template');
       try {
         document.execCommand('copy');
-        alert('복사 성공');
+        alert('복사 완료');
       } catch (err) {
         alert('복사 실패');
       }
     });
+
+    $('#name').on('keyup', function(e) {
+      $('#nameVal').text($(e.target).val());
+    });
+
+    $('#position').on('keyup', function(e) {
+      $('#positionVal').text($(e.target).val());
+    });
+
+    $('#email').on('keyup', function(e) {
+      $('#emailVal').text($(e.target).val());
+    });
+
+    $('#mobile').on('keyup', function(e) {
+      $('#mobileVal').text($(e.target).val());
+    });
+
+    $('#phone').on('keyup', function(e) {
+      $('#phoneVal').text($(e.target).val());
+    });
+
+    $('#name').val(getParameterByName('name') || '윤보람 책임 매니저').trigger('keyup');
+    $('#position').val(getParameterByName('position') || '디자인팀 UX/UI Designer').trigger('keyup');
+    $('#email').val(getParameterByName('email') || 'boram@add2paper.com').trigger('keyup');
+    $('#mobile').val(getParameterByName('mobile') || '010-0000-0000').trigger('keyup');
+    $('#phone').val(getParameterByName('phone') || '070-0000-0000').trigger('keyup');
+
     function selectText(element) {
       var doc = document;
       var text = doc.getElementById(element);
@@ -69,6 +120,16 @@
         selection.removeAllRanges();
         selection.addRange(range);
       }
+    }
+
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
   });
 </script>
