@@ -17,11 +17,11 @@
 <body>
 <div>
   <div style="margin-top: 30px; width: 300px; float: left;">
-    <label>이름 + 직책</label> <input type="text" id="name" placeholder="윤보람 책임"><br>
+    <label>이름 + 직책</label> <input type="text" id="name" placeholder="윤보람 책임 매니저"><br>
     <label>포지션</label> <input type="text" id="position" placeholder="디자인팀 UI/UX Designer"><br>
     <label>이메일</label> <input type="text" id="email" placeholder="boram@add2paper.com"><br>
-    <label>핸드폰 번호</label> <input type="text" id="mobile" placeholder="010-5170-7571"><br>
-    <label>내선 번호</label> <input type="text" id="phone" placeholder="070-8666-1101"><br>
+    <label>핸드폰 번호</label> <input type="text" id="mobile" placeholder="010-0000-0000"><br>
+    <label>내선 번호</label> <input type="text" id="phone" placeholder="070-0000-0000"><br>
   </div>
 
   <div style="float: left; width: 600px;">
@@ -98,11 +98,11 @@
       $('#phoneVal').text($(e.target).val());
     });
 
-    $('#name').val(getParameterByName('name') || '윤보람 책임 매니저').trigger('keyup');
-    $('#position').val(getParameterByName('position') || '디자인팀 UX/UI Designer').trigger('keyup');
-    $('#email').val(getParameterByName('email') || 'boram@add2paper.com').trigger('keyup');
-    $('#mobile').val(getParameterByName('mobile') || '010-0000-0000').trigger('keyup');
-    $('#phone').val(getParameterByName('phone') || '070-0000-0000').trigger('keyup');
+    $('#name').val(getParameterByName('name')).trigger('keyup');
+    $('#position').val(getParameterByName('position')).trigger('keyup');
+    $('#email').val(getParameterByName('email')).trigger('keyup');
+    $('#mobile').val(getParameterByName('mobile')).trigger('keyup');
+    $('#phone').val(getParameterByName('phone')).trigger('keyup');
 
     function selectText(element) {
       var doc = document;
