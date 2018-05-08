@@ -12,11 +12,17 @@
     input {
       width: 200px;
     }
+    a:visited {
+      color: black;
+    }
+    a {
+      color:black;
+    }
   </style>
 </head>
 <body>
 <div>
-  <div style="margin-top: 30px; width: 300px; float: left;">
+  <div style="margin-top: 30px; width: 300px; display: block">
     <label>이름 + 직책</label> <input type="text" id="name" placeholder="윤보람 책임 매니저"><br>
     <label>포지션</label> <input type="text" id="position" placeholder="디자인팀 UI/UX Designer"><br>
     <label>이메일</label> <input type="text" id="email" placeholder="boram@add2paper.com"><br>
@@ -24,35 +30,36 @@
     <label>내선 번호</label> <input type="text" id="phone" placeholder="070-0000-0000"><br>
   </div>
 
-  <div style="float: left; width: 600px;">
-    <div id="template" style="margin-top: 20px;">
+  <div style="width: 600px;">
+    <div id="template" style="margin: 20px 0;">
       <hr style="border: 1px solid rgb(216,216,216);">
-      <div style="padding: 20px 0;">
-        <img style="width: 150px; height: 20px;" src="add2paper-logo.png" alt="애드투페이퍼" />
-        <div style="color: rgb(68, 68, 68); font-size: 16px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin-top: 16px;">
-          <span id="nameVal"></span>
+      <div style="padding: 1px 10px; height:145px;">
+        <div style="display:inline-block; margin: 2px 20px; vertical-align: top; position: relative; top: 50%; transform: translateY(-50%);">
+          <img style="width: 130px; height: 130px;" src="add2paper-logo.png" alt="애드투페이퍼" />
         </div>
-        <div style="color: rgb(68, 68, 68); font-size: 12px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-          <span id="positionVal"></span>
-        </div>
-        <div style="margin-top: 16px;">
-          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-            <b>(주)애드크레딧</b>
+        <div style="display:inline-block; margin: 2px 0; vertical-align: top; position: relative; top: 50%; transform: translateY(-50%); line-height: 1em;">
+          <div style="color: rgb(68, 68, 68); font-size: 17px; font-weight: bold; font-family: arial, helvetica, sans-serif; color:black;">
+            <span id="nameVal"></span>
           </div>
-          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-            <b>E-mail</b> : <span id="emailVal"></span>
+          <div style="color: rgb(68, 68, 68); font-size: 13px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin: 6px 0px; color:black">
+            <span id="positionVal"></span>
           </div>
-          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-            <b>Mobile</b> : <span id="mobileVal"></span>
-          </div>
-          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-            <b>Phone</b> : <span id="phoneVal"></span>
-          </div>
-          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-            <b>Address</b> : 서울특별시 강남구 논현로 115길 12 유퍼스트 빌딩 3층
-          </div>
-          <div style="color: rgb(153, 153, 153); font-size: 8px; font-family: arial, helvetica, sans-serif; margin-top: 2px;">
-            <b>Home Page</b> : www.add2paper.com
+          <div style="font-size: 11px; font-family: arial, helvetica, sans-serif;">
+            <div>
+              Phone: <a id="phoneTag" href=""><span id="phoneVal"></span></a>
+            </div>
+            <div>
+              Mobile: <a id="mobileTag" href=""><span id="mobileVal"></span></a>
+            </div>
+            <div>
+              Site: <a href="https://www.add2paper.com/" target="_blank"><span>www.add2paper.com</span></a>
+            </div>
+            <div>
+              Email: <a id="emailTag"><span id="emailVal"></span></a>
+            </div>
+            <div>
+              Address: 서울시 강남구 테헤란로 142, 5층(역삼동, 캐피탈타워)
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +74,9 @@
   <li><a href="https://mail.google.com">지메일</a> 접속 후 우측 상단의 톱니바퀴 -> 설정</li>
   <li>서명란에 붙여넣기</li>
 </ol>
-
+<div style="height: 100px; display:inline-block">
+ㅎㅇㅎㅇ
+</div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
@@ -90,15 +99,21 @@
     });
 
     $('#email').on('keyup', function(e) {
-      $('#emailVal').text($(e.target).val());
+      var value = $(e.target).val();
+      $('#emailVal').text(value);
+      $('#emailTag').attr('href', 'mailto:' + value);
     });
 
     $('#mobile').on('keyup', function(e) {
-      $('#mobileVal').text($(e.target).val());
+      var value = $(e.target).val();
+      $('#mobileVal').text(value);
+      $('#mobileTag').attr('href', 'tel:' + value);
     });
 
     $('#phone').on('keyup', function(e) {
-      $('#phoneVal').text($(e.target).val());
+      var value = $(e.target).val();
+      $('#phoneVal').text(value);
+      $('#phoneTag').attr('href', 'tel:' + value);
     });
 
     $('#name').val(getParameterByName('name')).trigger('keyup');
