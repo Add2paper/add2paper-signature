@@ -32,63 +32,39 @@
 
   <div style="width: 600px;">
     <div id="template" style="margin: 20px 0;">
-      <style>
-        @media screen and (max-width: 500px) {
-          #imgWrapper img {
-            display: none !important;
-          }
-
-          #profileWrapper {
-            line-height: 1.1em !important;
-          }
-        }
-
-        @media screen and (min-width: 501px) {
-          #imgWrapper {
-            display: inline-block;
-            margin: 5px 20px;
-            vertical-align: middle;
-          }
-
-          #profileWrapper {
-            display: inline-block;
-            margin: 5px 0;
-            vertical-align: middle;
-            line-height: 1em;
-          }
-        }
-      </style>
       <hr style="border: 1px solid rgb(216,216,216);">
-      <div style="padding: 8px 15px;">
-        <div id="imgWrapper">
-          <img style="width: 130px; height: 130px;" src="add2paper-logo-201805.png" alt="애드투페이퍼" />
-        </div>
-        <div id="profileWrapper">
-          <div style="color: rgb(68, 68, 68); font-size: 17px; font-weight: bold; font-family: arial, helvetica, sans-serif; color:black;">
-            <span id="nameVal"></span>
-          </div>
-          <div style="color: rgb(68, 68, 68); font-size: 13px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin: 6px 0px; color:black">
-            <span id="positionVal"></span>
-          </div>
-          <div style="font-size: 11px; font-family: arial, helvetica, sans-serif;">
-            <div>
-              Phone: <a id="phoneTag" href=""><span id="phoneVal"></span></a>
+      <table>
+        <tr style="height:130px">
+          <td id="imgWrapper" style="text-align: center; vertical-align: middle; width: 20%;">
+            <img style="width: 90%; height: 30%;" src="add2paper-logo-201805.png" alt="애드투페이퍼" />
+          </td>
+          <td id="profileWrapper" style="vertical-align: middle; line-height: 1em;">
+            <div style="color: rgb(68, 68, 68); font-size: 17px; font-weight: bold; font-family: arial, helvetica, sans-serif; color:black;">
+              <span id="nameVal"></span>
             </div>
-            <div>
-              Mobile: <a id="mobileTag" href=""><span id="mobileVal"></span></a>
+            <div style="color: rgb(68, 68, 68); font-size: 13px; font-weight: bold; font-family: arial, helvetica, sans-serif; margin: 6px 0px; color:black">
+              <span id="positionVal"></span>
             </div>
-            <div>
-              Site: <a href="https://www.add2paper.com/" target="_blank"><span>www.add2paper.com</span></a>
+            <div style="font-size: 11px; font-family: arial, helvetica, sans-serif;">
+              <div>
+                Phone: <a id="phoneTag" href=""><span id="phoneVal"></span></a>
+              </div>
+              <div>
+                Mobile: <a id="mobileTag" href=""><span id="mobileVal"></span></a>
+              </div>
+              <div>
+                Site: <a href="https://www.add2paper.com/" target="_blank"><span>www.add2paper.com</span></a>
+              </div>
+              <div>
+                Email: <a id="emailTag"><span id="emailVal"></span></a>
+              </div>
+              <div>
+                Address: 서울시 강남구 테헤란로 142, 5층(역삼동, 캐피탈타워)
+              </div>
             </div>
-            <div>
-              Email: <a id="emailTag"><span id="emailVal"></span></a>
-            </div>
-            <div>
-              Address: 서울시 강남구 테헤란로 142, 5층(역삼동, 캐피탈타워)
-            </div>
-          </div>
-        </div>
-      </div>
+          </td>
+        </tr>
+      </table>
       <hr style="border: 1px solid rgb(216,216,216)">
     </div>
   </div>
