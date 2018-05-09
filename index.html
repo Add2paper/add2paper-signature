@@ -32,12 +32,38 @@
 
   <div style="width: 600px;">
     <div id="template" style="margin: 20px 0;">
+      <style>
+        @media screen and (max-width: 500px) {
+          #imgWrapper img {
+            display: none !important;
+          }
+
+          #profileWrapper {
+            line-height: 1.1em !important;
+          }
+        }
+
+        @media screen and (min-width: 501px) {
+          #imgWrapper {
+            display: inline-block;
+            margin: 5px 20px;
+            vertical-align: middle;
+          }
+
+          #profileWrapper {
+            display: inline-block;
+            margin: 5px 0;
+            vertical-align: middle;
+            line-height: 1em;
+          }
+        }
+      </style>
       <hr style="border: 1px solid rgb(216,216,216);">
-      <div style="padding: 8px 15px; height:145px;">
-        <div style="display:inline-block; margin: 5px 20px; vertical-align: middle">
+      <div style="padding: 8px 15px;">
+        <div id="imgWrapper">
           <img style="width: 130px; height: 130px;" src="add2paper-logo-201805.png" alt="애드투페이퍼" />
         </div>
-        <div style="display:inline-block; margin: 5px 0; vertical-align: middle; line-height: 1em;">
+        <div id="profileWrapper">
           <div style="color: rgb(68, 68, 68); font-size: 17px; font-weight: bold; font-family: arial, helvetica, sans-serif; color:black;">
             <span id="nameVal"></span>
           </div>
